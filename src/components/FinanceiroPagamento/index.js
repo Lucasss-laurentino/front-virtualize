@@ -139,7 +139,7 @@ export const FinanceiroPagamento = () => {
                 type="button"
                 className="btn btn-sm btn-danger button-green-table mx-1 p-0 btn-custom"
                 onClick={() => {
-                  window.location.href = "/form_financeiro";
+                  window.location.href = "/form_financeiro_pagamento";
                 }}
               >
                 <div class="encapsula-svg">

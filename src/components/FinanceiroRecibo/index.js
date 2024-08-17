@@ -138,7 +138,7 @@ export const FinanceiroRecibo = () => {
                 type="button"
                 className="btn btn-sm btn-success button-green-table mx-1 p-0 btn-custom"
                 onClick={() => {
-                  window.location.href = "/form_financeiro";
+                  window.location.href = "/form_financeiro_recibo";
                 }}
               >
                 <div class="encapsula-svg">

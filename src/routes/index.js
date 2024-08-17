@@ -15,6 +15,9 @@ import { FormCompras } from '../components/FormCompras';
 import { FinanceiroPagamento } from '../components/FinanceiroPagamento';
 import { FinanceiroRecibo } from '../components/FinanceiroRecibo';
 import { FinanceiroConciliacao } from '../components/FinanceiroConciliacao';
+import { FormFinanceiroPagamento } from '../components/FormFinanceiroPagamento';
+import { FormFinanceiroRecibo } from '../components/FormFinanceiroRecibo';
+import { FormFinanceiroConciliacao } from '../components/FormFinanceiroConciliacao';
 
 export default function appRouter() {
     return (
@@ -36,7 +39,10 @@ export default function appRouter() {
                 <Route path='/esqueceu_senha' element={<Esqueceu_senha />} />
                 <Route path='/form_financeiro' element={<FormFinanceiro />} />                
                 <Route path='/form_vendas' element={<FormVendas />} />                
-                <Route path='/form_compras' element={<FormCompras />} />                
+                <Route path='/form_compras' element={<FormCompras />} />     
+                <Route path='/form_financeiro_pagamento' element={<FormFinanceiroPagamento />} />                
+                <Route path='/form_financeiro_recibo' element={<FormFinanceiroRecibo />} />          
+                <Route path='/form_financeiro_conciliacao' element={<FormFinanceiroConciliacao />} />          
             </Routes>
         </Router>
     );
