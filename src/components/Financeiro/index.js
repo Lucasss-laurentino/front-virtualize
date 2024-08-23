@@ -1,9 +1,13 @@
 import "./index.css";
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
+import { FormFinanceiro } from "../FormFinanceiro";
 
 export const Financeiro = () => {
+  
   const [loader, setLoader] = useState(false);
+  const [fullscreen, setFullscreen] = useState(true);
+  const [show, setShow] = useState(false);
 
   return (
     <>
@@ -21,7 +25,7 @@ export const Financeiro = () => {
             />
           </div>
         )}
-
+        <FormFinanceiro show={show} fullscreen={fullscreen} setShow={setShow} />
         <div class="container-fluid px-4">
           <h1 class="mt-4">Financeiro</h1>
           <ol class="breadcrumb mb-4">
@@ -86,12 +90,15 @@ export const Financeiro = () => {
                 <h6 class="m-1">Pagamentos</h6>
               </div>
             </div>
-            <div class="aba-default mx-1" onClick={() => {
+            <div
+              class="aba-default mx-1"
+              onClick={() => {
                 setLoader(true);
-                setTimeout(() => {                      
+                setTimeout(() => {
                   window.location.href = "/financeiro_recibo";
-              }, 250)
-            }}>
+                }, 250);
+              }}
+            >
               <div class="d-flex justify-content-center align-items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,12 +114,13 @@ export const Financeiro = () => {
                 <h6 class="m-1">Recibos</h6>
               </div>
             </div>
-            <div class="aba-default mx-1"
+            <div
+              class="aba-default mx-1"
               onClick={() => {
                 setLoader(true);
-                setTimeout(() => { 
+                setTimeout(() => {
                   window.location.href = "/financeiro_conciliacao";
-                }, 250)               
+                }, 250);
               }}
             >
               <div class="d-flex justify-content-center align-items-center">
@@ -136,7 +144,7 @@ export const Financeiro = () => {
                 type="button"
                 className="btn btn-sm btn-success button-green-table mx-1 p-0 btn-custom"
                 onClick={() => {
-                  window.location.href = "/form_financeiro";
+                  setShow(true)
                 }}
               >
                 <div class="encapsula-svg">
@@ -232,54 +240,33 @@ export const Financeiro = () => {
               </button>
             </div>
             <div class="card-body p-0">
-              <table class="table table-striped table-dark">
+              <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">
-                      <input type="checkbox" className="mx-1" />
-                      Cod
-                    </th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Contato</th>
-                    <th scope="col">Conta</th>
-                    <th scope="col">Data</th>
-                    <th scope="col">Situação</th>
-                    <th scope="col">Valor</th>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">
-                      <input type="checkbox" className="mx-1" />1
-                    </th>
+                    <th scope="row">1</th>
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
                   </tr>
                   <tr>
-                    <th scope="row">
-                      <input type="checkbox" className="mx-1" />2
-                    </th>
+                    <th scope="row">2</th>
                     <td>Jacob</td>
                     <td>Thornton</td>
                     <td>@fat</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
                   </tr>
                   <tr>
-                    <th scope="row">
-                      <input type="checkbox" className="mx-1" />3
-                    </th>
+                    <th scope="row">3</th>
                     <td>Larry</td>
                     <td>the Bird</td>
                     <td>@twitter</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
                   </tr>
                 </tbody>
               </table>

@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
+import { FormFinanceiroRecibo } from "../FormFinanceiroRecibo";
 
 export const FinanceiroRecibo = () => {
   const [loader, setLoader] = useState(false);
+  const [fullscreen, setFullscreen] = useState(true);
+  const [show, setShow] = useState(false);
 
   return (
     <>
+      <FormFinanceiroRecibo show={show} fullscreen={fullscreen} setShow={setShow} />
       <main>
         {loader && (
           <div class="encapsula-loader">
@@ -138,7 +142,7 @@ export const FinanceiroRecibo = () => {
                 type="button"
                 className="btn btn-sm btn-success button-green-table mx-1 p-0 btn-custom"
                 onClick={() => {
-                  window.location.href = "/form_financeiro_recibo";
+                  setShow(true);
                 }}
               >
                 <div class="encapsula-svg">
@@ -234,54 +238,33 @@ export const FinanceiroRecibo = () => {
               </button>
             </div>
             <div class="card-body p-0">
-              <table class="table table-striped table-dark">
+              <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">
-                      <input type="checkbox" className="mx-1" />
-                      Cod
-                    </th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Contato</th>
-                    <th scope="col">Conta</th>
-                    <th scope="col">Data</th>
-                    <th scope="col">Situação</th>
-                    <th scope="col">Valor</th>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">
-                      <input type="checkbox" className="mx-1" />1
-                    </th>
+                    <th scope="row">1</th>
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
                   </tr>
                   <tr>
-                    <th scope="row">
-                      <input type="checkbox" className="mx-1" />2
-                    </th>
+                    <th scope="row">2</th>
                     <td>Jacob</td>
                     <td>Thornton</td>
                     <td>@fat</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
                   </tr>
                   <tr>
-                    <th scope="row">
-                      <input type="checkbox" className="mx-1" />3
-                    </th>
+                    <th scope="row">3</th>
                     <td>Larry</td>
                     <td>the Bird</td>
                     <td>@twitter</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
                   </tr>
                 </tbody>
               </table>

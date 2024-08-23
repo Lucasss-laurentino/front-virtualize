@@ -1,0 +1,117 @@
+.form-vendas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.txt-compras {
+    color: #605d5d;
+    margin: 0;
+    font-size: 14px;
+}
+
+.personalizacao-tabela-compras {
+    padding-left: 1%;
+}
+
+.coluna {
+    flex-direction: column;
+}
+
+.tabela-compras.produto {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+.tr-personalizada {
+    background-color: #DDDDDD;
+}
+
+.th-tabela-compras-produto {
+    font-size: 13px;
+    color: #605d5d;
+}
+
+.input-disabled {
+    width: 100%;
+    color: #605d5d;
+    border: none;
+    background-color: transparent;
+    outline: 0;
+    font-weight: 600;
+}
+
+.div-input-row-table {
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.produto-ou-servico {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.svg-input {
+    height: 35px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.texto-responsivo-tabela-vendas {
+    font-size: 14px;
+}
+
+.input-table-vendas {
+
+    border: 1px solid #605d5d;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-radius: 5px;
+}
+
+.border-x {
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-right: 1px solid #605d5d;
+}
+
+.field-table-form-produto {
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #34464D;
+    border-radius: 5px;
+}
+
+.outline-input {
+    outline: 0;
+}
+
+.border-right-span {
+    height: 27px;
+    width: 1px;
+    margin-left: 3px;
+    background-color: #34464D;
+    
+}
+
+.bg-input-table-vendas {
+    height: 29px;
+    color: white;
+    background-color: #34464D;
+}

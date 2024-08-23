@@ -10,6 +10,23 @@ export const Compras = () => {
             </li>
             <li class="breadcrumb-item active">compras</li>
           </ol>
+          <div class="container d-flex justify-content-start align-items-center p-0">
+            <div class="aba-active padd">
+              <div class="d-flex justify-content-center align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-truck"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2" />
+                </svg>
+                <h6 class="m-1">Compras</h6>
+              </div>
+            </div>
+          </div>
           <div class="card mb-4">
             <div class="card-header">
               <button className="btn btn-sm btn-success button-green-table mx-1 btn-custom">
@@ -106,16 +123,13 @@ export const Compras = () => {
               </button>
             </div>
             <div class="card-body p-0">
-              <table class="table table-striped table-dark">
+              <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">Cod</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Contato</th>
-                    <th scope="col">Conta</th>
-                    <th scope="col">Data</th>
-                    <th scope="col">Situação</th>
-                    <th scope="col">Valor</th>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -124,27 +138,18 @@ export const Compras = () => {
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
                     <td>Jacob</td>
                     <td>Thornton</td>
                     <td>@fat</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
                     <td>Larry</td>
                     <td>the Bird</td>
                     <td>@twitter</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
                   </tr>
                 </tbody>
               </table>

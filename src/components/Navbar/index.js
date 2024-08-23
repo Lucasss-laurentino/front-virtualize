@@ -1,12 +1,14 @@
+import './index.css';
+
 export const Navbar = () => {
   return (
     <>
-      <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+      <nav class="sb-topnav navbar navbar-expand bg-nav-bar">
         <a class="navbar-brand ps-3" href="/">
-          <img src="/imagens/vt.png" class="img-fluid mt-3" width="80%" alt="Responsive image"/>
+          <img src="/imagens/vt.png" class="img-fluid mx-3" width="70%" alt="Responsive image"/>
         </a>
         <button
-          class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
+          class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 text-white"
           id="sidebarToggle"
           href="#!"
         >
@@ -21,7 +23,7 @@ export const Navbar = () => {
               aria-label="Search for..."
               aria-describedby="btnNavbarSearch"
             />
-            <button class="btn btn-primary" id="btnNavbarSearch" type="button">
+            <button class="btn btn-secondary" id="btnNavbarSearch" type="button">
               <i class="fas fa-search"></i>
             </button>
           </div>
@@ -29,7 +31,7 @@ export const Navbar = () => {
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
           <li class="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle"
+              class="nav-link dropdown-toggle text-white"
               id="navbarDropdown"
               href="#"
               role="button"
