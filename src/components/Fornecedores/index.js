@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
 
-export const Clientes = () => {
+export const Fornecedores = () => {
   const [loader, setLoader] = useState(false);
 
   return (
@@ -26,10 +26,18 @@ export const Clientes = () => {
             <li class="breadcrumb-item">
               <a href="/">Pagina inicial</a>
             </li>
-            <li class="breadcrumb-item active">clientes</li>
+            <li class="breadcrumb-item active">Fornecedores</li>
           </ol>
           <div class="container d-flex justify-content-start align-items-center p-0">
-            <div class="aba-active padd">
+            <div
+              class="aba-default padd"
+              onClick={() => {
+                setLoader(true);
+                setTimeout(() => {
+                  window.location.href = "/clientes";
+                }, 250);
+              }}
+            >
               <div class="d-flex justify-content-center align-items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +57,7 @@ export const Clientes = () => {
               </div>
             </div>
             <div
-              class="aba-default mx-1"
+              class="aba-active mx-1"
               onClick={() => {
                 setLoader(true);
                 setTimeout(() => {

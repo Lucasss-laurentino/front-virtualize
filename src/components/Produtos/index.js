@@ -49,7 +49,7 @@ export const Produtos = () => {
               onClick={() => {
                 setLoader(true);
                 setTimeout(() => {
-                  window.location.href = "/financeiro_recibo";
+                  window.location.href = "/servicos";
                 }, 250);
               }}
             >
@@ -73,7 +73,7 @@ export const Produtos = () => {
               onClick={() => {
                 setLoader(true);
                 setTimeout(() => {
-                  window.location.href = "/financeiro_conciliacao";
+                  window.location.href = "/ajuste_estoque";
                 }, 250);
               }}
             >
@@ -253,7 +253,7 @@ export const Produtos = () => {
             </div>
           </div>
         </div>
-      </main>{" "}
+      </main>
     </>
   );
 };

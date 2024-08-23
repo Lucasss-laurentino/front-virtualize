@@ -115,3 +115,10 @@
     color: white;
     background-color: #34464D;
 }
+
+.height-table-footer {
+    height: 38px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

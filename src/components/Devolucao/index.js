@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
+import { FormVendas } from "../FormVendas";
 
-export const Clientes = () => {
+export const Devolucao = () => {
   const [loader, setLoader] = useState(false);
+  const [fullscreen, setFullscreen] = useState(true);
+  const [show, setShow] = useState(false);
 
   return (
     <>
@@ -21,39 +24,20 @@ export const Clientes = () => {
           </div>
         )}
         <div class="container-fluid px-4">
-          <h1 class="mt-4">Clientes</h1>
+          <h1 class="mt-4">Devoluçoes</h1>
           <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item">
               <a href="/">Pagina inicial</a>
             </li>
-            <li class="breadcrumb-item active">clientes</li>
+            <li class="breadcrumb-item active">Devoluções</li>
           </ol>
           <div class="container d-flex justify-content-start align-items-center p-0">
-            <div class="aba-active padd">
-              <div class="d-flex justify-content-center align-items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-person-plus-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                  <path
-                    fill-rule="evenodd"
-                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
-                  />
-                </svg>
-                <h6 class="m-1">Clientes</h6>
-              </div>
-            </div>
             <div
-              class="aba-default mx-1"
+              class="aba-default padd"
               onClick={() => {
                 setLoader(true);
                 setTimeout(() => {
-                  window.location.href = "/fornecedores";
+                  window.location.href = "/vendas";
                 }, 250);
               }}
             >
@@ -63,21 +47,20 @@ export const Clientes = () => {
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-receipt"
+                  class="bi bi-cart-fill"
                   viewBox="0 0 16 16"
                 >
-                  <path d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27m.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0z" />
-                  <path d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5" />
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                 </svg>
-                <h6 class="m-1">Fornecedores</h6>
+                <h6 class="m-1">Vendas</h6>
               </div>
             </div>
             <div
-              class="aba-default mx-1"
+              class="aba-active mx-1"
               onClick={() => {
                 setLoader(true);
                 setTimeout(() => {
-                  window.location.href = "/transportadores";
+                  window.location.href = "/financeiro_conciliacao";
                 }, 250);
               }}
             >
@@ -87,18 +70,23 @@ export const Clientes = () => {
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-truck"
+                  class="bi bi-arrow-up-left-square-fill"
                   viewBox="0 0 16 16"
                 >
-                  <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2" />
+                  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm8.096 10.803L6 6.707v2.768a.5.5 0 0 1-1 0V5.5a.5.5 0 0 1 .5-.5h3.975a.5.5 0 1 1 0 1H6.707l4.096 4.096a.5.5 0 1 1-.707.707" />
                 </svg>
-                <h6 class="m-1">Transportadores</h6>
+                <h6 class="m-1">Devoluções</h6>
               </div>
             </div>
           </div>
           <div class="card mb-4">
             <div class="card-header">
-              <button className="btn btn-sm btn-success button-green-table mx-1 btn-custom">
+              <button
+                className="btn btn-sm btn-success button-green-table mx-1 btn-custom"
+                onClick={() => {
+                  setShow(true);
+                }}
+              >
                 <div class="encapsula-svg">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -254,7 +242,7 @@ export const Clientes = () => {
             </div>
           </div>
         </div>
-      </main>
+      </main>{" "}
     </>
   );
 };

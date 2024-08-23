@@ -53,7 +53,7 @@ export const Venda = () => {
               onClick={() => {
                 setLoader(true);
                 setTimeout(() => {
-                  window.location.href = "/financeiro_conciliacao";
+                  window.location.href = "/devolucao";
                 }, 250);
               }}
             >
