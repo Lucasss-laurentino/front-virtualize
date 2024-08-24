@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
 import { FormVendas } from "../FormVendas";
+import { FormDevolucao } from "../FormDevolucoes";
 
 export const Devolucao = () => {
   const [loader, setLoader] = useState(false);
@@ -10,6 +11,7 @@ export const Devolucao = () => {
   return (
     <>
       <main>
+        <FormDevolucao show={show} setShow={setShow} fullscreen={fullscreen} />
         {loader && (
           <div class="encapsula-loader">
             <ThreeCircles

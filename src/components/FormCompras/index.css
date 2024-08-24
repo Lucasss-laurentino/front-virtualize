@@ -1,0 +1,12 @@
+.border-left {
+    border-left: 1px solid white    ;
+}
+
+.bg-thead {
+    color: white;
+    background-color: rgb(52, 70, 77, 0.9);
+}
+
+.txt-sm {
+    font-size: 14px;
+}
