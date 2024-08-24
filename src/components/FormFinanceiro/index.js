@@ -3,11 +3,6 @@ import "./index.css";
 import Modal from "react-bootstrap/Modal";
 
 export const FormFinanceiro = (props) => {
-  const [form_hiden, setForm_hiden] = useState("form-hiden");
-
-  useEffect(() => {
-    setForm_hiden("form-show");
-  });
 
   return (
     <>
@@ -16,7 +11,7 @@ export const FormFinanceiro = (props) => {
         fullscreen={props.fullscreen}
         onHide={() => props.setShow(false)}
       >
-        <Modal.Body className="p-0">
+        <Modal.Body className="p-0 d-flex">
           <div class="form-show">
             <div class="formulario-header">
               <h5 class="titulo-formulario-header-financeiro">

@@ -1,17 +1,9 @@
 .form-show {
   width: 100%;
-  height: 100vh;
   background-color: #34464D;
   transform: translateY(0%);
   transition-duration: 70ms;
-}
-
-.form-hiden {
-  width: 100%;
-  height: 100vh;
-  background-color: #212529;
-  transform: translateY(-100%);
-  transition-duration: 200ms;
+  overflow-y: auto;
 }
 
 .formulario-header {

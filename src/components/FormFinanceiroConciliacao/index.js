@@ -8,7 +8,7 @@ export const FormFinanceiroConciliacao = (props) => {
         fullscreen={props.fullscreen}
         onHide={() => props.setShow(false)}
       >
-        <Modal.Body className="p-0">
+        <Modal.Body className="p-0 d-flex">
           <div class="form-show">
             <div class="formulario-header">
               <h5 class="titulo-formulario-header-financeiro">
