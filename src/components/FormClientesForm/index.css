@@ -1,0 +1,41 @@
+.bg-btn {
+    height: 50px;
+    font-weight: 500;
+    background-color: #34464D;
+    border: none;
+    border-radius: 5px;
+}
+.bg-btn:hover {
+    background-color: white;
+    color: #34464D;
+    border: 1px solid #34464D;
+    cursor: pointer;
+}
+
+.list-style-none {
+    list-style: none;
+}
+
+.person-dv {
+    border: 1px solid #34464D;
+    border-radius: 10px;
+    margin-left: 1%;
+}
+
+.dados-gerais {
+    width: 96%;
+    min-height: 150px;
+    margin-left: 10px;
+    background-color: #34464D;
+}
+
+.encap-icon {
+    border: 1px solid white;
+    margin-right: 4%;
+    border-radius: 5px;
+}
+
+.input-clientes {
+    border: none;
+    height: 30px;
+}

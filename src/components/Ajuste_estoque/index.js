@@ -8,7 +8,7 @@ export const Ajuste_estoque = () => {
     <>
       <main>
         {loader && (
-          <div class="encapsula-loader">
+          <div className="encapsula-loader">
             <ThreeCircles
               visible={true}
               height="30"

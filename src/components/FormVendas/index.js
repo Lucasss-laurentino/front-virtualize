@@ -237,6 +237,25 @@ export const FormVendas = (props) => {
                         </table>
                       </div>
                     </div>
+                    {/* BTN */}
+                    <div class="formulario col-11 p-3 mb-5 mt-3">
+                      <div class="row justify-content-end">
+                      <div class="col-lg-1 encapsula-input p-0 m-1">
+                        <button class="btn btn-sm bg-btn">Salvar</button>
+                      </div>
+                      <div class="col-lg-1 encapsula-input p-0 m-1">
+                        <button
+                          class="btn btn-sm btn-secondary"
+                          type="button"
+                          onClick={() => {
+                           props.setShow(false)
+                          }}
+                        >
+                          Voltar
+                        </button>
+                      </div>
+                      </div>
+                    </div>
                   </form>
                 </div>
               </div>

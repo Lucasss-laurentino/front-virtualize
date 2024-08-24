@@ -1,12 +1,17 @@
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
+import { FormClientes } from "../FormClientes";
 
 export const Clientes = () => {
   const [loader, setLoader] = useState(false);
+  const [fullscreen, setFullscreen] = useState(true);
+  const [show, setShow] = useState(false);
+
 
   return (
     <>
       <main>
+        <FormClientes show={show} setShow={setShow} fullscreen={fullscreen} />
         {loader && (
           <div class="encapsula-loader">
             <ThreeCircles
@@ -98,7 +103,11 @@ export const Clientes = () => {
           </div>
           <div class="card mb-4">
             <div class="card-header">
-              <button className="btn btn-sm btn-success button-green-table mx-1 btn-custom">
+              <button className="btn btn-sm btn-success button-green-table mx-1 btn-custom"
+                onClick={() => {
+                  setShow(true);
+                }}
+              >
                 <div class="encapsula-svg">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
