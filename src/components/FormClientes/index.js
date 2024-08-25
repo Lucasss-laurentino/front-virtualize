@@ -1,7 +1,9 @@
 import Modal from "react-bootstrap/Modal";
-import { FormClientesForm } from "../FormClientesForm";
+import { FormClientesDados } from "../FormClientesDados";
 import { useEffect, useState } from "react";
 import "./index.css";
+import { FormClientesEndereco } from "../FormClienteEndereco";
+import { FormClientesInfo } from "../FormCLientesInfo";
 
 export const FormClientes = (props) => {
   const [aba_ativa, setAba_ativa] = useState(1);
@@ -88,10 +90,24 @@ export const FormClientes = (props) => {
                         </div>
                       </div>
                     </div>
-                    <FormClientesForm
-                      aba_ativa={aba_ativa}
-                      form_ativo={form_ativo}
-                    />
+                    {aba_ativa === 1 && (
+                      <FormClientesDados
+                        aba_ativa={aba_ativa}
+                        form_ativo={form_ativo}
+                      />
+                    )}
+                    {aba_ativa === 2 && (
+                      <FormClientesEndereco
+                        aba_ativa={aba_ativa}
+                        form_ativo={form_ativo}
+                      />
+                    )}
+                    {aba_ativa === 3 && (
+                      <FormClientesInfo
+                        aba_ativa={aba_ativa}
+                        form_ativo={form_ativo}
+                      />
+                    )}
                   </div>
                 </div>
               </div>

@@ -1,6 +1,8 @@
+import { FormClientesEndereco } from "../FormClienteEndereco";
+import { FormClientesInfo } from "../FormCLientesInfo";
 import Modal from "react-bootstrap/Modal";
-import { FormClientesForm } from "../FormClientesForm";
 import { useState } from "react";
+import { FormClientesDados } from "../FormClientesDados";
 
 export const FormTransportadores = (props) => {
   const [aba_ativa, setAba_ativa] = useState(1);
@@ -87,10 +89,24 @@ export const FormTransportadores = (props) => {
                         </div>
                       </div>
                     </div>
-                    <FormClientesForm
-                      aba_ativa={aba_ativa}
-                      form_ativo={form_ativo}
-                    />
+                    {aba_ativa === 1 && (
+                      <FormClientesDados
+                        aba_ativa={aba_ativa}
+                        form_ativo={form_ativo}
+                      />
+                    )}
+                    {aba_ativa === 2 && (
+                      <FormClientesEndereco
+                        aba_ativa={aba_ativa}
+                        form_ativo={form_ativo}
+                      />
+                    )}
+                    {aba_ativa === 3 && (
+                      <FormClientesInfo
+                        aba_ativa={aba_ativa}
+                        form_ativo={form_ativo}
+                      />
+                    )}
                   </div>
                 </div>
               </div>

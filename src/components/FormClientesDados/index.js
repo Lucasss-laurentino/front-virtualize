@@ -1,7 +1,7 @@
 import './index.css';
 
-export const FormClientesForm = (props) => {
-    const { aba_ativam, form_ativo } = props
+export const FormClientesDados = (props) => {
+    const { aba_ativa, form_ativo } = props
     return (
         <>
             <div className="container-fluid pt-4 border border-dark p-0">
