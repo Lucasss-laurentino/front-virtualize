@@ -1,0 +1,14 @@
+.aba-ativa-clientes {
+  width: 25%;
+  height: 50px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #34464D;
+  border-bottom: 5px solid white;
+  z-index: 10;
+  position: fixed;
+  z-index: 2;
+  margin-top: 2px;
+  color: #34464D;
+  background-color: white;
+}

@@ -1,15 +1,36 @@
 .bg-btn {
-    height: 50px;
+    height: 32px;
     font-weight: 500;
     background-color: #34464D;
     border: none;
     border-radius: 5px;
 }
+.bg-btn-cliente {
+    height: 50px;
+    font-weight: 500;
+    color: white;
+    background-color: #34464D;
+    border: none;
+    border-radius: 5px;
+}
+.bg-btn-cliente:hover {
+    background-color: white;
+    color: #34464D;
+    border: 1px solid #34464D;
+    cursor: pointer;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid white;
+}
+
 .bg-btn:hover {
     background-color: white;
     color: #34464D;
     border: 1px solid #34464D;
     cursor: pointer;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid white;
 }
 
 .list-style-none {
@@ -17,8 +38,6 @@
 }
 
 .person-dv {
-    border: 1px solid #34464D;
-    border-radius: 10px;
     margin-left: 1%;
 }
 

@@ -1,10 +1,10 @@
 import './index.css';
 
 export const FormClientesForm = (props) => {
-    const { aba_ativa } = props
+    const { aba_ativam, form_ativo } = props
     return (
         <>
-            <div className="container-fluid mt-4 p-0">
+            <div className="container-fluid pt-4 border border-dark p-0">
                 <div className="d-flex">
                     <form action="" className="d-flex col-12 p-0">
                         <div className="col-3 person-dv">
@@ -14,15 +14,15 @@ export const FormClientesForm = (props) => {
                             <div className="d-flex justify-content-center align-items-center flex-column">
                                 <ul className='p-0 m-0 col-12 list-style-none'>
                                     <li className='text-start my-2 '>
-                                        <input type="checkbox" className='mx-2' />
+                                        <input type="checkbox" checked={form_ativo === 1 && true} className='mx-2' />
                                         <span>Cliente</span>
                                     </li>
                                     <li className='text-start my-2'>
-                                        <input type="checkbox" className='mx-2' />
+                                        <input type="checkbox" checked={form_ativo === 2 && true} className='mx-2' />
                                         <span>Fornecedor</span>
                                     </li>
                                     <li className='text-start my-2'>
-                                        <input type="checkbox" className='mx-2' />
+                                        <input type="checkbox" checked={form_ativo === 3 && true} className='mx-2' />
                                         <span>Transportador</span>
                                     </li>
                                 </ul>

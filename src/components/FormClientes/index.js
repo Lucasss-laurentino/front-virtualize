@@ -1,15 +1,17 @@
 import Modal from "react-bootstrap/Modal";
 import { FormClientesForm } from "../FormClientesForm";
 import { useEffect, useState } from "react";
+import "./index.css";
 
 export const FormClientes = (props) => {
-
   const [aba_ativa, setAba_ativa] = useState(1);
+  const [form_ativo, setForm_ativo] = useState(1);
 
   return (
     <>
       <Modal
-        show={props.show} ll
+        show={props.show}
+        ll
         fullscreen={props.fullscreen}
         onHide={() => props.setShow(false)}
       >
@@ -42,30 +44,54 @@ export const FormClientes = (props) => {
                   <div class="formulario col-11 p-5">
                     <div className="container-fluid">
                       <div className="row">
-                        <div className="col-4">
-                          <button className="col-12 bg-btn" onClick={() => {
-                            setAba_ativa(1)
-                          }}>
+                        <div className="col-4 position-relative">
+                          <button
+                            className={
+                              aba_ativa === 1
+                                ? "aba-ativa-clientes"
+                                : "col-12 bg-btn-cliente"
+                            }
+                            onClick={() => {
+                              setAba_ativa(1);
+                            }}
+                          >
                             DADOS
                           </button>
                         </div>
                         <div className="col-4">
-                          <button className="col-12 bg-btn" onClick={() => {
-                            setAba_ativa(2)
-                          }}>
+                          <button
+                            className={
+                              aba_ativa === 2
+                                ? "aba-ativa-clientes"
+                                : "col-12 bg-btn-cliente"
+                            }
+                            onClick={() => {
+                              setAba_ativa(2);
+                            }}
+                          >
                             ENDEREÇO
                           </button>
                         </div>
                         <div className="col-4">
-                          <button className="col-12 bg-btn" onClick={() => {
-                            setAba_ativa(3)
-                          }}>
+                          <button
+                            className={
+                              aba_ativa === 3
+                                ? "aba-ativa-clientes"
+                                : "col-12 bg-btn-cliente"
+                            }
+                            onClick={() => {
+                              setAba_ativa(3);
+                            }}
+                          >
                             INFORMAÇÕES ADICIONAIS
                           </button>
                         </div>
                       </div>
                     </div>
-                    <FormClientesForm aba_ativa={aba_ativa}/>
+                    <FormClientesForm
+                      aba_ativa={aba_ativa}
+                      form_ativo={form_ativo}
+                    />
                   </div>
                 </div>
               </div>
@@ -75,4 +101,4 @@ export const FormClientes = (props) => {
       </Modal>
     </>
   );
-}
+};
