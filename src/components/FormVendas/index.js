@@ -166,6 +166,7 @@ export const FormVendas = (props) => {
                                     <input
                                       type="text"
                                       className="col-8 border border-white outline-input"
+                                      placeholder="R$ 0,00"
                                     />
                                   </div>
                                 </div>
@@ -192,18 +193,27 @@ export const FormVendas = (props) => {
                                     <input
                                       type="text"
                                       className="col-8 border border-white outline-input"
+                                      placeholder="0"
                                     />
                                   </div>
                                 </div>
                               </td>
                               <td className="col-1">
                                 <div className="col-12 d-flex justify-content-center align-items-center">
-                                  <p className="m-0 col-12 text-center">R$ 0,00</p>
+                                  <div className="field-table-form-produto">
+                                    <input
+                                      type="text"
+                                      className="col-12 border border-white outline-input"
+                                      placeholder="R$ 0,00"
+                                    />
+                                  </div>
                                 </div>
                               </td>
                               <td className="col-1">
                                 <div className="col-12 d-flex justify-content-center align-items-center">
-                                  <p className="m-0 col-12 text-center">R$ 0,00</p>
+                                  <p className="m-0 col-12 text-center">
+                                    R$ 0,00
+                                  </p>
                                 </div>
                               </td>
                               <td className="col-1">
@@ -240,20 +250,20 @@ export const FormVendas = (props) => {
                     {/* BTN */}
                     <div class="formulario col-11 p-3 mb-5 mt-3">
                       <div class="row justify-content-end">
-                      <div class="col-lg-1 encapsula-input p-0 m-1">
-                        <button class="btn btn-sm bg-btn">Salvar</button>
-                      </div>
-                      <div class="col-lg-1 encapsula-input p-0 m-1">
-                        <button
-                          class="btn btn-sm btn-secondary"
-                          type="button"
-                          onClick={() => {
-                           props.setShow(false)
-                          }}
-                        >
-                          Voltar
-                        </button>
-                      </div>
+                        <div class="col-lg-1 encapsula-input p-0 m-1">
+                          <button class="btn btn-sm bg-btn">Salvar</button>
+                        </div>
+                        <div class="col-lg-1 encapsula-input p-0 m-1">
+                          <button
+                            class="btn btn-sm btn-secondary"
+                            type="button"
+                            onClick={() => {
+                              props.setShow(false);
+                            }}
+                          >
+                            Voltar
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </form>
