@@ -2,6 +2,7 @@ import "./index.css";
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
 import { FormFinanceiro } from "../FormFinanceiro";
+import { Table } from "./Table";
 
 export const Financeiro = () => {
   
@@ -38,7 +39,7 @@ export const Financeiro = () => {
             <li class="breadcrumb-item active">Recebimento</li>{" "}
           </ol>
           <div class="container d-flex justify-content-start align-items-center p-0">
-            <div class="aba-active padd">
+          <div class="aba-active padd">
               <div class="d-flex justify-content-center align-items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -240,36 +241,7 @@ export const Financeiro = () => {
               </button>
             </div>
             <div class="card-body p-0">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table>
+              <Table />
               <nav aria-label="...">
                 <div className="d-flex justify-content-between align-items-center">
                   <h6 class="total-listado-tables">TOTAL LISTADO (0)</h6>
