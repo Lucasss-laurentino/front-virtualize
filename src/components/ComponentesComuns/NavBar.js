@@ -1,8 +1,43 @@
-export const NavBar = ({ setLoader }) => {
+import { useEffect } from "react";
+import { useRef } from "react";
+
+export const NavBar = ({ setLoader, paginaAtual }) => {
+
+    const recebimentosRef = useRef();
+    const pagamentosRef = useRef();
+    const recibosRef = useRef();
+    const conciliacaoRef = useRef();
+
+    useEffect(() => {
+        switch (paginaAtual) {
+            case "recebimentos":
+                recebimentosRef.current.className = "aba-active padd";
+                break;
+            case "pagamentos":
+                pagamentosRef.current.className = "aba-active-danger mx-1";
+                break;
+            case "recibos":
+                recibosRef.current.className = "aba-active mx-1";
+                break;
+            case "conciliacao":
+                conciliacaoRef.current.className = "aba-active mx-1";
+                break;
+            default:
+                recebimentosRef.current.className = "aba-active padd";
+        }
+    }, [paginaAtual])
 
     return (
         <div class="container d-flex justify-content-start align-items-center p-0">
-            <div class="aba-active padd">
+            <div 
+            ref={recebimentosRef} 
+            class="aba-default padd"
+            onClick={() => {
+                setLoader(true);
+                setTimeout(() => {
+                    window.location.href = "/financeiro";
+                }, 250);
+            }}>
                 <div class="d-flex justify-content-center align-items-center">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -25,6 +60,7 @@ export const NavBar = ({ setLoader }) => {
                 </div>
             </div>
             <div
+                ref={pagamentosRef}
                 class="aba-default mx-1"
                 onClick={() => {
                     setLoader(true);
@@ -55,6 +91,7 @@ export const NavBar = ({ setLoader }) => {
                 </div>
             </div>
             <div
+                ref={recibosRef}
                 class="aba-default mx-1"
                 onClick={() => {
                     setLoader(true);
@@ -79,6 +116,7 @@ export const NavBar = ({ setLoader }) => {
                 </div>
             </div>
             <div
+                ref={conciliacaoRef}
                 class="aba-default mx-1"
                 onClick={() => {
                     setLoader(true);

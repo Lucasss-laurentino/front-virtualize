@@ -39,7 +39,7 @@ export const Financeiro = () => {
             </li>
             <li class="breadcrumb-item active">Recebimento</li>{" "}
           </ol>
-          <NavBar setLoader={setLoader} />
+          <NavBar setLoader={setLoader} paginaAtual="recebimentos" />
           <div class="card mb-4">
             <div class="card-header">
               <button
