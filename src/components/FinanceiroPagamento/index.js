@@ -3,6 +3,7 @@ import "./index.css";
 import { ThreeCircles } from "react-loader-spinner";
 import { FormFinanceiroPagamento } from "../FormFinanceiroPagamento";
 import { NavBar } from "../ComponentesComuns/NavBar";
+import { BotoesNavegacaoTabela } from '../ComponentesComuns/BotoesNavegacaoTabela'
 
 export const FinanceiroPagamento = () => {
   const [loader, setLoader] = useState(false);
@@ -176,33 +177,7 @@ export const FinanceiroPagamento = () => {
                   <p className="valor-paragrafo">R$ 0,00</p>
                 </div>
                 <hr />
-                <ul class="pagination justify-content-end mx-3">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">
-                      Anterior
-                    </a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link teste" href="#">
-                      1
-                    </a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">
-                      2 <span class="sr-only">(atual)</span>
-                    </a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">
-                      3
-                    </a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">
-                      Próximo
-                    </a>
-                  </li>
-                </ul>
+                <BotoesNavegacaoTabela />
               </nav>
             </div>
           </div>
