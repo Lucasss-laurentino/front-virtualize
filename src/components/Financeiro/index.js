@@ -2,9 +2,9 @@ import "./index.css";
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
 import { FormFinanceiro } from "../FormFinanceiro";
-import { NavBar } from "../ComponentesComuns/NavBar";
+import { NavBar } from "../ComponentesComuns/Financeiro/NavBar";
 import { Table } from "./Table";
-import { BotoesNavegacaoTabela } from "../ComponentesComuns/BotoesNavegacaoTabela";
+import { BotoesNavegacaoTabela } from "../ComponentesComuns/Financeiro/BotoesNavegacaoTabela";
 
 export const Financeiro = () => {
 

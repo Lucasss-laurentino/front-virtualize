@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./index.css";
 import { ThreeCircles } from "react-loader-spinner";
 import { FormFinanceiroPagamento } from "../FormFinanceiroPagamento";
-import { NavBar } from "../ComponentesComuns/NavBar";
-import { BotoesNavegacaoTabela } from '../ComponentesComuns/BotoesNavegacaoTabela'
+import { NavBar } from "../ComponentesComuns/Financeiro/NavBar";
+import { BotoesNavegacaoTabela } from '../ComponentesComuns/Financeiro/BotoesNavegacaoTabela'
 
 export const FinanceiroPagamento = () => {
   const [loader, setLoader] = useState(false);
