@@ -3,6 +3,7 @@ import { ThreeCircles } from "react-loader-spinner";
 import { FormFinanceiroRecibo } from "../FormFinanceiroRecibo";
 import { NavBar } from "../ComponentesComuns/Financeiro/NavBar";
 import { BotoesNavegacaoTabela } from '../ComponentesComuns/Financeiro/BotoesNavegacaoTabela'
+import { ListCaminho } from "../ComponentesComuns/Financeiro/ListCaminho";
 
 export const FinanceiroRecibo = () => {
   const [loader, setLoader] = useState(false);
@@ -28,15 +29,7 @@ export const FinanceiroRecibo = () => {
         )}
         <div class="container-fluid px-4">
           <h1 class="mt-4">Financeiro</h1>
-          <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item">
-              <a href="/">Pagina inicial</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="/financeiro">Financeiro</a>
-            </li>
-            <li class="breadcrumb-item active">Recibo</li>
-          </ol>
+          <ListCaminho paginaAtual="Recibos" />
           <NavBar setLoader={setLoader} paginaAtual="recibos" />
           <div class="card mb-4">
             <div class="card-header">
