@@ -31,7 +31,7 @@ export const Clientes = () => {
             <li class="breadcrumb-item">
               <a href="/">Pagina inicial</a>
             </li>
-            <li class="breadcrumb-item active">clientes</li>
+            <li class="breadcrumb-item active">Clientes</li>
           </ol>
           <div class="container d-flex justify-content-start align-items-center p-0">
             <div class="aba-active padd">

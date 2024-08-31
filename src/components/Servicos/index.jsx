@@ -26,7 +26,7 @@ export const Servicos = () => {
             <li class="breadcrumb-item">
               <a href="/">Pagina inicial</a>
             </li>
-            <li class="breadcrumb-item active">serviços</li>
+            <li class="breadcrumb-item active">Serviços</li>
           </ol>
           <div class="container d-flex justify-content-start align-items-center p-0">
             <div

@@ -30,7 +30,7 @@ export const Venda = () => {
             <li class="breadcrumb-item">
               <a href="/">Pagina inicial</a>
             </li>
-            <li class="breadcrumb-item active">vendas</li>
+            <li class="breadcrumb-item active">Vendas</li>
           </ol>
           <div class="container d-flex justify-content-start align-items-center p-0">
             <div class="aba-active padd">
