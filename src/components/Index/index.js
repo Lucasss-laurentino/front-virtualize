@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import { Main } from "../Main";
 import { Menu_lateral } from "../Menu_lateral";
 import { Navbar } from "../Navbar";
 

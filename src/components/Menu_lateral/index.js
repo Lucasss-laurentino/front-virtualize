@@ -1,4 +1,26 @@
+import { useEffect, useRef } from "react";
+
 export const Menu_lateral = () => {
+
+  const financeiroRef = useRef();
+  const vendasRef = useRef();
+  const comprasRef = useRef();
+  const clientesRef = useRef();
+  const produtosRef = useRef();
+  const boletosRef = useRef();
+
+  useEffect(() => {
+    const paginaAtual = window.location.pathname;
+    switch (paginaAtual) {
+      case '/financeiro':
+        financeiroRef.current.style.color = 'white'
+        break;
+        case '/vendas':
+          vendasRef.current.style.color = 'white'
+      default:
+        break;
+    }
+  }, [])
   return (
     <>
       <div id="layoutSidenav_nav">
@@ -6,7 +28,7 @@ export const Menu_lateral = () => {
           <div class="sb-sidenav-menu">
             <div class="nav">
               <div class="sb-sidenav-menu-heading">Menu</div>
-              <a class="nav-link" href="/financeiro">
+              <a ref={financeiroRef} class="nav-link" href="/financeiro">
                 <div class="sb-nav-link-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +43,7 @@ export const Menu_lateral = () => {
                 </div>
                 Financeiro
               </a>
-              <a class="nav-link" href="/vendas">
+              <a ref={vendasRef} class="nav-link" href="/vendas">
                 <div class="sb-nav-link-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +58,7 @@ export const Menu_lateral = () => {
                 </div>
                 Vendas
               </a>
-              <a class="nav-link" href="/compras">
+              <a ref={comprasRef} class="nav-link" href="/compras">
                 <div class="sb-nav-link-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +73,7 @@ export const Menu_lateral = () => {
                 </div>
                 Compras
               </a>
-              <a class="nav-link" href="/clientes">
+              <a ref={clientesRef} class="nav-link" href="/clientes">
                 <div class="sb-nav-link-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +88,7 @@ export const Menu_lateral = () => {
                 </div>
                 Clientes
               </a>
-              <a class="nav-link" href="/produtos">
+              <a ref={produtosRef} class="nav-link" href="/produtos">
                 <div class="sb-nav-link-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +103,7 @@ export const Menu_lateral = () => {
                 </div>
                 Produtos
               </a>
-              <a class="nav-link" href="index.html">
+              <a ref={boletosRef} class="nav-link" href="index.html">
                 <div class="sb-nav-link-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
