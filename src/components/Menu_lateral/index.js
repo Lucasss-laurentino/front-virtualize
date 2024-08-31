@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export const Menu_lateral = () => {
+export const MenuLateral = () => {
 
   const financeiroRef = useRef();
   const vendasRef = useRef();
@@ -12,11 +12,21 @@ export const Menu_lateral = () => {
   useEffect(() => {
     const paginaAtual = window.location.pathname;
     switch (paginaAtual) {
-      case '/financeiro':
-        financeiroRef.current.style.color = 'white'
+      case "/financeiro":
+        financeiroRef.current.style.color = "white";
         break;
-        case '/vendas':
-          vendasRef.current.style.color = 'white'
+        case "/vendas":
+          vendasRef.current.style.color = "white";
+          break;
+        case "/compras":
+          comprasRef.current.style.color = "white";
+          break;
+        case "/clientes":
+          clientesRef.current.style.color = "white";
+          break;
+        case "/produtos":
+          produtosRef.current.style.color = "white";
+          break;
       default:
         break;
     }

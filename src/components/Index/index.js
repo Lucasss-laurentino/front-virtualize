@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Menu_lateral } from "../Menu_lateral";
+import { MenuLateral } from "../Menu_lateral";
 import { Navbar } from "../Navbar";
 
 export const Index = () => {
@@ -7,7 +7,7 @@ export const Index = () => {
     <>
       <Navbar/>
       <div id="layoutSidenav">
-        <Menu_lateral/>
+        <MenuLateral/>
         <div id="layoutSidenav_content">
           <Outlet/>
           <footer class="py-4 bg-light mt-auto">
