@@ -11,24 +11,25 @@ export const MenuLateral = () => {
 
   useEffect(() => {
     const paginaAtual = window.location.pathname;
-    switch (paginaAtual) {
-      case "/financeiro":
-        financeiroRef.current.style.color = "white";
-        break;
-        case "/vendas":
-          vendasRef.current.style.color = "white";
-          break;
-        case "/compras":
-          comprasRef.current.style.color = "white";
-          break;
-        case "/clientes":
-          clientesRef.current.style.color = "white";
-          break;
-        case "/produtos":
-          produtosRef.current.style.color = "white";
-          break;
-      default:
-        break;
+    if (paginaAtual === "/financeiro" || paginaAtual === "/financeiro_pagamento" || 
+      paginaAtual === "/financeiro_recibo" || paginaAtual === "/financeiro_conciliacao"
+    ) {
+      financeiroRef.current.style.color = "white";
+    }
+    if (paginaAtual === "/vendas" || paginaAtual === "/devolucao") {
+      vendasRef.current.style.color = "white";
+    }
+    if (paginaAtual === "/compras") {
+      comprasRef.current.style.color = "white";
+    }
+    if (paginaAtual === "/clientes" || paginaAtual === "/fornecedores" || 
+      paginaAtual === "/transportadores") {
+      clientesRef.current.style.color = "white";
+    }
+    if (paginaAtual === "/produtos" || paginaAtual === "/servicos" ||
+      paginaAtual === "/ajuste_estoque"
+    ) {
+      produtosRef.current.style.color = "white";
     }
   }, [])
   return (
