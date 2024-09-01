@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FormCompras } from "../FormCompras";
+import { ListCaminho } from '../ComponentesComuns/ListCaminho'
 
 export const Compras = () => {
 
@@ -12,12 +13,7 @@ export const Compras = () => {
       <main>
         <div class="container-fluid px-4">
           <h1 class="mt-4">Compras</h1>
-          <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item">
-              <a href="/">Pagina inicial</a>  
-            </li>
-            <li class="breadcrumb-item active">Compras</li>
-          </ol>
+          <ListCaminho paginaAtual="Compras" />
           <div class="container d-flex justify-content-start align-items-center p-0">
             <div class="aba-active padd">
               <div class="d-flex justify-content-center align-items-center">

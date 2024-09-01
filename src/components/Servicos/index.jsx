@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
+import { ListCaminho } from '../ComponentesComuns/ListCaminho';
 
 export const Servicos = () => {
   const [loader, setLoader] = useState(false);
@@ -22,12 +23,7 @@ export const Servicos = () => {
         )}
         <div class="container-fluid px-4">
           <h1 class="mt-4">Produtos</h1>
-          <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item">
-              <a href="/">Pagina inicial</a>
-            </li>
-            <li class="breadcrumb-item active">Serviços</li>
-          </ol>
+          <ListCaminho paginaAtual="Serviços" />
           <div class="container d-flex justify-content-start align-items-center p-0">
             <div
               class="aba-default padd"

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
 import { FormVendas } from "../FormVendas";
 import { FormDevolucao } from "../FormDevolucoes";
+import { ListCaminho } from "../ComponentesComuns/ListCaminho";
 
 export const Devolucao = () => {
   const [loader, setLoader] = useState(false);
@@ -26,13 +27,8 @@ export const Devolucao = () => {
           </div>
         )}
         <div class="container-fluid px-4">
-          <h1 class="mt-4">Devoluçoes</h1>
-          <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item">
-              <a href="/">Pagina inicial</a>
-            </li>
-            <li class="breadcrumb-item active">Devoluções</li>
-          </ol>
+          <h1 class="mt-4">Devoluções</h1>
+          <ListCaminho paginaAtual="Devoluções" />
           <div class="container d-flex justify-content-start align-items-center p-0">
             <div
               class="aba-default padd"

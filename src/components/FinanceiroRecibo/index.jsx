@@ -3,7 +3,7 @@ import { ThreeCircles } from "react-loader-spinner";
 import { FormFinanceiroRecibo } from "../FormFinanceiroRecibo";
 import { NavBar } from "../ComponentesComuns/Financeiro/NavBar";
 import { BotoesNavegacaoTabela } from '../ComponentesComuns/Financeiro/BotoesNavegacaoTabela'
-import { ListCaminho } from "../ComponentesComuns/Financeiro/ListCaminho";
+import { ListCaminho } from "../ComponentesComuns/ListCaminho";
 
 export const FinanceiroRecibo = () => {
   const [loader, setLoader] = useState(false);
