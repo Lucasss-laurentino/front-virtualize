@@ -5,7 +5,7 @@ import { FormFinanceiro } from "../FormFinanceiro";
 import { NavBar } from "../ComponentesComuns/Financeiro/NavBar";
 import { Table } from "./Table";
 import { BotoesNavegacaoTabela } from "../ComponentesComuns/Financeiro/BotoesNavegacaoTabela";
-import { FormButtons } from "./FormButtons";
+import { FormButtons } from "../ComponentesComuns/FormButtons";
 import { ListCaminho } from "../ComponentesComuns//ListCaminho";
 
 export const Financeiro = () => {
