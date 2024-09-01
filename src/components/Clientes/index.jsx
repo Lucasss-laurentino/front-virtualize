@@ -3,6 +3,7 @@ import { ThreeCircles } from "react-loader-spinner";
 import { FormClientes } from "../FormClientes";
 import { ListCaminho } from "../ComponentesComuns/ListCaminho";
 import { FormButtons } from "../ComponentesComuns/FormButtons";
+import { Table } from "../ComponentesComuns/TableExemplo";
 
 export const Clientes = () => {
   const [loader, setLoader] = useState(false);
@@ -101,36 +102,7 @@ export const Clientes = () => {
           <div class="card mb-4">
             <FormButtons setShow={setShow} />
             <div class="card-body p-0">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table>
+              <Table />
               <nav aria-label="...">
                 <ul class="pagination justify-content-end mx-3">
                   <li class="page-item disabled">

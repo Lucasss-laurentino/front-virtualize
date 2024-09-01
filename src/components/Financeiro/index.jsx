@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
 import { FormFinanceiro } from "../FormFinanceiro";
 import { NavBar } from "../ComponentesComuns/Financeiro/NavBar";
-import { Table } from "./Table";
+import { Table } from "../ComponentesComuns/TableExemplo";
 import { BotoesNavegacaoTabela } from "../ComponentesComuns/Financeiro/BotoesNavegacaoTabela";
 import { FormButtons } from "../ComponentesComuns/FormButtons";
 import { ListCaminho } from "../ComponentesComuns//ListCaminho";
