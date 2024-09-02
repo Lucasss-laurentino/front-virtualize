@@ -1,7 +1,8 @@
 import { useState } from "react";
+
+import { ListCaminho, FormButtons } from "../ComponentesComuns/Index";
+
 import { FormCompras } from "../FormCompras";
-import { ListCaminho } from '../ComponentesComuns/ListCaminho';
-import { FormButtons } from "../ComponentesComuns/FormButtons";
 import { Table } from "../ComponentesComuns/TableExemplo";
 
 export const Compras = () => {

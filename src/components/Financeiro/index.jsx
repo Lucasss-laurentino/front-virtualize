@@ -1,13 +1,13 @@
 import "./index.css";
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
+
+import { ListCaminho, FormButtons, ListagemTabela } from "../ComponentesComuns/Index";
+
 import { FormFinanceiro } from "../FormFinanceiro";
 import { NavBar } from "../ComponentesComuns/Financeiro/NavBar";
 import { Table } from "../ComponentesComuns/TableExemplo";
 import { BotoesNavegacaoTabela } from "../ComponentesComuns/Financeiro/BotoesNavegacaoTabela";
-import { FormButtons } from "../ComponentesComuns/FormButtons";
-import { ListCaminho } from "../ComponentesComuns//ListCaminho";
-import { ListagemTabela } from "../ComponentesComuns/ListagemTabela";
 
 export const Financeiro = () => {
 

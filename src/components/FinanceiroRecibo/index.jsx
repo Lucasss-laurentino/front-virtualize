@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
+
+import { ListCaminho, FormButtons, ListagemTabela } from "../ComponentesComuns/Index";
+
 import { FormFinanceiroRecibo } from "../FormFinanceiroRecibo";
 import { NavBar } from "../ComponentesComuns/Financeiro/NavBar";
 import { BotoesNavegacaoTabela } from '../ComponentesComuns/Financeiro/BotoesNavegacaoTabela'
-import { ListCaminho } from "../ComponentesComuns/ListCaminho";
-import { FormButtons } from "../ComponentesComuns/FormButtons";
 import { Table } from "../ComponentesComuns/TableExemplo";
-import { ListagemTabela } from "../ComponentesComuns/ListagemTabela";
 
 export const FinanceiroRecibo = () => {
   const [loader, setLoader] = useState(false);

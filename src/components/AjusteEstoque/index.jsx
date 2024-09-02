@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
-import { ListCaminho } from '../ComponentesComuns/ListCaminho';
-import { FormButtons } from "../ComponentesComuns/FormButtons";
+
+import { ListCaminho, FormButtons } from "../ComponentesComuns/Index";
+
 import { Table } from "../ComponentesComuns/TableExemplo";
 
-export const Ajuste_estoque = () => {
+export const AjusteEstoque = () => {
   const [loader, setLoader] = useState(false);
   const [show, setShow] = useState(false);
 

@@ -22,7 +22,7 @@ import { Devolucao } from '../components/Devolucao';
 import { Fornecedores } from '../components/Fornecedores';
 import { Transportadores } from '../components/Transportadores';
 import { Servicos } from '../components/Servicos';
-import { Ajuste_estoque } from '../components/Ajuste_estoque';
+import { AjusteEstoque } from '../components/AjusteEstoque';
 
 export default function appRouter() {
     return (
@@ -48,7 +48,7 @@ export default function appRouter() {
             <Route path="/fornecedores" element={<Fornecedores />} />
             <Route path="/transportadores" element={<Transportadores />} />
             <Route path="/servicos" element={<Servicos />} />
-            <Route path="/ajuste_estoque" element={<Ajuste_estoque />} />
+            <Route path="/ajuste_estoque" element={<AjusteEstoque />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/criar_usuario" element={<Criar_usuario />} />

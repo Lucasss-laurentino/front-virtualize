@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
+
+import { ListCaminho, FormButtons } from "../ComponentesComuns/Index";
+
 import { FormProdutos } from "../FormProdutos";
-import { ListCaminho } from "../ComponentesComuns/ListCaminho";
-import { FormButtons } from "../ComponentesComuns/FormButtons";
 import { Table } from "../ComponentesComuns/TableExemplo";
 
 export const Produtos = () => {

@@ -1,4 +1,4 @@
-export const ListCaminho = ({ paginaAtual }) => {
+const ListCaminho = ({ paginaAtual }) => {
   return (
     <ol class="breadcrumb mb-4">
       <li class="breadcrumb-item">
@@ -8,3 +8,5 @@ export const ListCaminho = ({ paginaAtual }) => {
     </ol>
   )
 }
+
+export default ListCaminho

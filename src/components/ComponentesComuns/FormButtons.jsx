@@ -1,4 +1,4 @@
-export const FormButtons = ({ setShow }) => {
+const FormButtons = ({ setShow }) => {
     return (
         <div class="card-header">
               <button
@@ -102,3 +102,5 @@ export const FormButtons = ({ setShow }) => {
             </div>
     )
 }
+
+export default FormButtons
