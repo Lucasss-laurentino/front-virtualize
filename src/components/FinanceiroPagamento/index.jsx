@@ -7,6 +7,7 @@ import { BotoesNavegacaoTabela } from '../ComponentesComuns/Financeiro/BotoesNav
 import { ListCaminho } from "../ComponentesComuns/ListCaminho";
 import { FormButtons } from "../ComponentesComuns/FormButtons";
 import { Table } from "../ComponentesComuns/TableExemplo";
+import { ListagemTabela } from "../ComponentesComuns/ListagemTabela";
 
 export const FinanceiroPagamento = () => {
   const [loader, setLoader] = useState(false);
@@ -39,10 +40,7 @@ export const FinanceiroPagamento = () => {
             <div class="card-body p-0">
               <Table />
               <nav aria-label="...">
-                <div className="d-flex justify-content-between align-items-center">
-                  <h6 class="total-listado-tables">TOTAL LISTADO (0)</h6>
-                  <p className="valor-paragrafo">R$ 0,00</p>
-                </div>
+                <ListagemTabela />
                 <hr />
                 <BotoesNavegacaoTabela />
               </nav>
