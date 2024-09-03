@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
 
-import { ListCaminho, FormButtons, ListagemTabela } from "../ComponentesComuns/Index";
+import { ListCaminho, FormButtons, ListagemTabela, ContainerInfo } from "../ComponentesComuns/Index";
 
 import { FormFinanceiroRecibo } from "../FormFinanceiroRecibo";
 import { NavBar } from "../ComponentesComuns/Financeiro/NavBar";
@@ -30,8 +30,7 @@ export const FinanceiroRecibo = () => {
             />
           </div>
         )}
-        <div class="container-fluid px-4">
-          <h1 class="mt-4">Financeiro</h1>
+        <ContainerInfo paginaAtual="Financeiro">
           <ListCaminho paginaAtual="Recibos" />
           <NavBar setLoader={setLoader} paginaAtual="recibos" />
           <div class="card mb-4">
@@ -41,11 +40,11 @@ export const FinanceiroRecibo = () => {
               <nav aria-label="...">
                 <ListagemTabela />
                 <hr />
-              <BotoesNavegacaoTabela />  
+                <BotoesNavegacaoTabela />
               </nav>
             </div>
           </div>
-        </div>
+        </ContainerInfo>
       </main>{" "}
     </>
   );
