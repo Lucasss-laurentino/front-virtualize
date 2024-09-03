@@ -1,4 +1,4 @@
-export const BotoesNavegacaoTabela = () => {
+const BotoesNavegacaoTabela = () => {
     return (
         <ul class="pagination justify-content-end mx-3">
             <li class="page-item disabled">
@@ -29,3 +29,5 @@ export const BotoesNavegacaoTabela = () => {
         </ul>
     )
 }
+
+export default BotoesNavegacaoTabela

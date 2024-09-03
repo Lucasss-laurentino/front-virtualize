@@ -2,11 +2,10 @@ import { useState } from "react";
 import "./index.css";
 import { ThreeCircles } from "react-loader-spinner";
 
-import { ListCaminho, FormButtons, ListagemTabela, ContainerInfo } from "../ComponentesComuns/Index";
+import { ListCaminho, FormButtons, ListagemTabela, ContainerInfo, BotoesNavegacaoTabela } from "../ComponentesComuns/Index";
 
 import { FormFinanceiroPagamento } from "../FormFinanceiroPagamento";
 import { NavBar } from "../ComponentesComuns/Financeiro/NavBar";
-import { BotoesNavegacaoTabela } from '../ComponentesComuns/Financeiro/BotoesNavegacaoTabela'
 import { Table } from "../ComponentesComuns/TableExemplo";
 
 export const FinanceiroPagamento = () => {
