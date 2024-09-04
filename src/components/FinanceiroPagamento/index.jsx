@@ -2,10 +2,12 @@ import { useState } from "react";
 import "./index.css";
 import { ThreeCircles } from "react-loader-spinner";
 
-import { ListCaminho, FormButtons, ListagemTabela, ContainerInfo, BotoesNavegacaoTabela } from "../ComponentesComuns/Index";
+import { ListCaminho, NavBar, FormButtons, 
+  ListagemTabela, ContainerInfo, BotoesNavegacaoTabela } from "../ComponentesComuns/Index";
+
+import { navButtons } from "../../financeiroButtons";
 
 import { FormFinanceiroPagamento } from "../FormFinanceiroPagamento";
-import { NavBar } from "../ComponentesComuns/Financeiro/NavBar";
 import { Table } from "../ComponentesComuns/TableExemplo";
 
 export const FinanceiroPagamento = () => {
@@ -32,7 +34,7 @@ export const FinanceiroPagamento = () => {
         )}
         <ContainerInfo paginaAtual="Financeiro">
           <ListCaminho paginaAtual="Pagamentos" />
-          <NavBar setLoader={setLoader} paginaAtual="pagamentos" />
+          <NavBar setLoader={setLoader} buttons={navButtons}/>
           <div class="card mb-4">
             <FormButtons setShow={setShow} />
             <div class="card-body p-0">

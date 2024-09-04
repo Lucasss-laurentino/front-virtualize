@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
 
-import { ListCaminho, FormButtons, ListagemTabela, ContainerInfo, BotoesNavegacaoTabela } from "../ComponentesComuns/Index";
+import { ListCaminho, NavBar, FormButtons, 
+  ListagemTabela, ContainerInfo, BotoesNavegacaoTabela } from "../ComponentesComuns/Index";
+
+import { navButtons } from "../../financeiroButtons";
 
 import { FormFinanceiroConciliacao } from "../FormFinanceiroConciliacao";
-import { NavBar } from "../ComponentesComuns/Financeiro/NavBar";
 import { Table } from "../ComponentesComuns/TableExemplo";
 
 export const FinanceiroConciliacao = () => {
@@ -31,7 +33,7 @@ export const FinanceiroConciliacao = () => {
         )}
         <ContainerInfo paginaAtual="Financeiro">
           <ListCaminho paginaAtual="Conciliação" />
-          <NavBar setLoader={setLoader} paginaAtual="conciliacao" />
+          <NavBar setLoader={setLoader} buttons={navButtons} />
           <div class="card mb-4">
             <FormButtons setShow={setShow} />
             <div class="card-body p-0">
