@@ -2,8 +2,12 @@ import { useState } from "react";
 import "./index.css";
 import { ThreeCircles } from "react-loader-spinner";
 
-import { ListCaminho, NavBar, FormButtons, 
-  ListagemTabela, ContainerInfo, BotoesNavegacaoTabela } from "../ComponentesComuns/Index";
+import {
+  ListCaminho, NavBar, FormButtons,
+  ListagemTabela, ContainerInfo, BotoesNavegacaoTabela,
+  InfoCard,
+  InfoCardBody
+} from "../ComponentesComuns/Index";
 
 import { navButtons } from "../../financeiroButtons";
 
@@ -34,18 +38,18 @@ export const FinanceiroPagamento = () => {
         )}
         <ContainerInfo paginaAtual="Financeiro">
           <ListCaminho paginaAtual="Pagamentos" />
-          <NavBar setLoader={setLoader} buttons={navButtons}/>
-          <div class="card mb-4">
+          <NavBar setLoader={setLoader} buttons={navButtons} />
+          <InfoCard>
             <FormButtons setShow={setShow} />
-            <div class="card-body p-0">
+            <InfoCardBody>
               <Table />
               <nav aria-label="...">
                 <ListagemTabela />
                 <hr />
                 <BotoesNavegacaoTabela />
               </nav>
-            </div>
-          </div>
+            </InfoCardBody>
+          </InfoCard>
         </ContainerInfo>
       </main>{" "}
     </>

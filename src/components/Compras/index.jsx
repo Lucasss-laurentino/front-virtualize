@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ListCaminho, FormButtons, BotoesNavegacaoTabela, NavBar } from "../ComponentesComuns/Index";
+import { ListCaminho, FormButtons, BotoesNavegacaoTabela, NavBar, InfoCard, InfoCardBody } from "../ComponentesComuns/Index";
 
 import { FormCompras } from "../FormCompras";
 import { Table } from "../ComponentesComuns/TableExemplo";
@@ -13,21 +13,21 @@ export const Compras = () => {
 
   return (
     <>
-    <FormCompras show={show} setShow={setShow} fullscreen={fullscreen} />
+      <FormCompras show={show} setShow={setShow} fullscreen={fullscreen} />
       <main>
         <div class="container-fluid px-4">
           <h1 class="mt-4">Compras</h1>
           <ListCaminho paginaAtual="Compras" />
           <NavBar setLoader={setLoader} buttons={[["/compras", "Compras"]]} />
-          <div class="card mb-4">
+          <InfoCard>
             <FormButtons setShow={setShow} />
-            <div class="card-body p-0">
+            <InfoCardBody>
               <Table />
               <nav aria-label="...">
                 <BotoesNavegacaoTabela />
               </nav>
-            </div>
-          </div>
+            </InfoCardBody>
+          </InfoCard>
         </div>
       </main>{" "}
     </>
