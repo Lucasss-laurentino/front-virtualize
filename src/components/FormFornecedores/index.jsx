@@ -89,6 +89,7 @@ export const FormFornecedores = (props) => {
                         </div>
                       </div>
                     </div>
+                    
                     {aba_ativa === 1 && (
                       <FormClientesDados
                         aba_ativa={aba_ativa}
