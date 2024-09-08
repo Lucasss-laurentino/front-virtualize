@@ -1,8 +1,19 @@
 import { useContext } from "react";
 import "./index.css";
 import { LoginContext } from "../../contexts/LoginContext";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { userSchema } from "../../validations/loginValidation";
 
 export const Login = () => {
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(userSchema)
+  });
 
   const { user, setUser, login } = useContext(LoginContext);
 
@@ -33,19 +44,24 @@ export const Login = () => {
                         </h3>
                       </div>
                       <div className="card-body">
-                        <form>
+                        <form onSubmit={handleSubmit(login)}>
                           <div className="form-floating mb-3">
                             <input
                               className="form-control"
                               id="inputEmail"
                               type="email"
-                              name="EMAIL"
+                              {...register("EMAIL")}
                               value={user.EMAIL}
                               onChange={(event) => {
                                 handleChange(event);
                               }}
                               placeholder="nome@exemplo.com"
                             />
+                             {errors.EMAIL && (
+                              <p className="m-0 my-1 text-danger">
+                                {errors.EMAIL.message}
+                              </p>
+                            )}
                             <label >Email</label>
                           </div>
                           <div className="form-floating mb-3">
@@ -53,7 +69,7 @@ export const Login = () => {
                               className="form-control"
                               id="inputPassword"
                               type="password"
-                              name="PASSWORD"
+                              {...register("PASSWORD")}
                               value={user.PASSWORD}
                               placeholder="Password"
                               onChange={(event) => {
@@ -69,6 +85,11 @@ export const Login = () => {
                               type="checkbox"
                               value=""
                             />
+                             {errors.PASSWORD && (
+                              <p className="m-0 my-1 text-danger">
+                                {errors.PASSWORD.message}
+                              </p>
+                            )}
                             <label
                               className="form-check-label"
                             >
@@ -79,11 +100,11 @@ export const Login = () => {
                             <a className="small text-dark" href="/esqueceu_senha">
                               Esqueceu a senha ?
                             </a>
-                            <a className="btn btn-dark" onClick={() => {
-                              login();
-                            }}>
+                            <button 
+                            type="submit"
+                            className="btn btn-dark">
                               Entrar
-                            </a>
+                            </button>
                           </div>
                         </form>
                       </div>
