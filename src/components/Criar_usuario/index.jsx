@@ -3,8 +3,8 @@ import { LoginContext } from "../../contexts/LoginContext";
 import "./index.css";
 import { MutatingDots } from "react-loader-spinner";
 import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
-import { userSchema } from "../../validations/loginValidation";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { createUserSchema } from "../../validations/createUserValidation";
 
 export const Criar_usuario = () => {
   const { user, setUser, createUserAndLogin, loader, popup } =
@@ -15,7 +15,7 @@ export const Criar_usuario = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(userSchema)
+    resolver: yupResolver(createUserSchema),
   });
 
   const handleChange = (event) => {
@@ -77,11 +77,11 @@ export const Criar_usuario = () => {
                                   }}
                                   placeholder="Enter your last name"
                                 />
-                                 {errors.NOME_EMPRESA && (
-                              <p className="m-0 my-1 text-danger">
-                                {errors.NOME_EMPRESA.message}
-                              </p>
-                            )}
+                                {errors.NOME_EMPRESA && (
+                                  <p className="m-0 my-1 text-danger">
+                                    {errors.NOME_EMPRESA.message}
+                                  </p>
+                                )}
                                 <label for="inputLastName">
                                   Nome da sua empresa
                                 </label>
@@ -104,11 +104,11 @@ export const Criar_usuario = () => {
                                     handleChange(event);
                                   }}
                                 />
-                                 {errors.PASSWORD && (
-                              <p className="m-0 my-1 text-danger">
-                                {errors.PASSWORD.message}
-                              </p>
-                            )}
+                                {errors.PASSWORD && (
+                                  <p className="m-0 my-1 text-danger">
+                                    {errors.PASSWORD.message}
+                                  </p>
+                                )}
                                 <label for="inputPassword">Senha</label>
                               </div>
                             </div>
@@ -126,11 +126,11 @@ export const Criar_usuario = () => {
                                   }}
                                   placeholder="Confirm password"
                                 />
-                                 {errors.CONFIRM_PASSWORD && (
-                              <p className="m-0 my-1 text-danger">
-                                {errors.CONFIRM_PASSWORD.message}
-                              </p>
-                            )}
+                                {errors.CONFIRM_PASSWORD && (
+                                  <p className="m-0 my-1 text-danger">
+                                    {errors.CONFIRM_PASSWORD.message}
+                                  </p>
+                                )}
                                 <label for="inputPasswordConfirm">
                                   Confirmar senha
                                 </label>

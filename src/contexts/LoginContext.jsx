@@ -14,15 +14,18 @@ export const LoginProvider = ({children}) => {
 
   const [loader, setLoader] = useState(false);
   const [popup, setPopup] = useState(false);
-
+  const [erroLogin, setErroLogin] = useState("");
+  const [loaderLogin, setLoaderLogin] = useState(false);
   const login = () => {
-
-    http.post('/login', { user })
+    setLoaderLogin(true)
+    http.post('/login/login', { user })
     .then((response) => {
-      console.log(response);
+      setLoaderLogin(false);
+      window.location.href = '/';
     })
     .catch((error) => {
-      console.log(error);
+      setErroLogin("Não foi possivel fazer login, dados incorreto!");
+      setLoaderLogin(false);
     });
   }
 
@@ -53,6 +56,9 @@ export const LoginProvider = ({children}) => {
       setLoader,
       setPopup,
       popup,
+      erroLogin,
+      loaderLogin,
+      setLoaderLogin
     }}>
       {children}
     </LoginContext.Provider>
