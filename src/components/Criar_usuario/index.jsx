@@ -1,12 +1,22 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { LoginContext } from "../../contexts/LoginContext";
 import "./index.css";
 import { MutatingDots } from "react-loader-spinner";
-
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { userSchema } from "../../validations/loginValidation";
 
 export const Criar_usuario = () => {
   const { user, setUser, createUserAndLogin, loader, popup } =
     useContext(LoginContext);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(userSchema)
+  });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -16,7 +26,6 @@ export const Criar_usuario = () => {
     });
   };
 
-  
   return (
     <>
       <body className="background-login">
@@ -33,13 +42,12 @@ export const Criar_usuario = () => {
                         </h3>
                       </div>
                       <div className="card-body">
-                        <form>
+                        <form onSubmit={handleSubmit(createUserAndLogin)}>
                           <div className="form-floating mb-3">
                             <input
                               className="form-control"
-                              id="inputEmail"
                               type="email"
-                              name="EMAIL"
+                              {...register("EMAIL")}
                               disabled={loader ? true : false}
                               value={user.EMAIL}
                               onChange={(event) => {
@@ -47,6 +55,11 @@ export const Criar_usuario = () => {
                               }}
                               placeholder="name@example.com"
                             />
+                            {errors.EMAIL && (
+                              <p className="m-0 my-1 text-danger">
+                                {errors.EMAIL.message}
+                              </p>
+                            )}
                             <label for="inputEmail">Email</label>
                           </div>
                           <div className="row mb-3">
@@ -56,7 +69,7 @@ export const Criar_usuario = () => {
                                   className="form-control"
                                   id="inputLastName"
                                   type="text"
-                                  name="NOME_EMPRESA"
+                                  {...register("NOME_EMPRESA")}
                                   disabled={loader ? true : false}
                                   value={user.NOME_EMPRESA}
                                   onChange={(event) => {
@@ -64,6 +77,11 @@ export const Criar_usuario = () => {
                                   }}
                                   placeholder="Enter your last name"
                                 />
+                                 {errors.NOME_EMPRESA && (
+                              <p className="m-0 my-1 text-danger">
+                                {errors.NOME_EMPRESA.message}
+                              </p>
+                            )}
                                 <label for="inputLastName">
                                   Nome da sua empresa
                                 </label>
@@ -79,13 +97,18 @@ export const Criar_usuario = () => {
                                   id="inputPassword"
                                   type="password"
                                   placeholder="Create a password"
-                                  name="PASSWORD"
+                                  {...register("PASSWORD")}
                                   value={user.PASSWORD}
                                   disabled={loader ? true : false}
                                   onChange={(event) => {
                                     handleChange(event);
                                   }}
                                 />
+                                 {errors.PASSWORD && (
+                              <p className="m-0 my-1 text-danger">
+                                {errors.PASSWORD.message}
+                              </p>
+                            )}
                                 <label for="inputPassword">Senha</label>
                               </div>
                             </div>
@@ -95,7 +118,7 @@ export const Criar_usuario = () => {
                                   className="form-control"
                                   id="inputPasswordConfirm"
                                   type="password"
-                                  name="CONFIRM_PASSWORD"
+                                  {...register("CONFIRM_PASSWORD")}
                                   disabled={loader ? true : false}
                                   value={user.CONFIRM_PASSWORD}
                                   onChange={(event) => {
@@ -103,6 +126,11 @@ export const Criar_usuario = () => {
                                   }}
                                   placeholder="Confirm password"
                                 />
+                                 {errors.CONFIRM_PASSWORD && (
+                              <p className="m-0 my-1 text-danger">
+                                {errors.CONFIRM_PASSWORD.message}
+                              </p>
+                            )}
                                 <label for="inputPasswordConfirm">
                                   Confirmar senha
                                 </label>
@@ -124,21 +152,21 @@ export const Criar_usuario = () => {
                                   wrapperClass=""
                                 />
                               ) : (
-                                <a
+                                <button
+                                  type="submit"
                                   className="btn btn-dark btn-block w-100"
-                                  onClick={() => {
-                                    createUserAndLogin();
-                                  }}
                                 >
                                   Criar conta
-                                </a>
+                                </button>
                               )}
                             </div>
-                            {
-                              popup && <div className="container text-center my-3">
-                                <p className="m-0 text-danger">Usuário existente</p>
+                            {popup && (
+                              <div className="container text-center my-3">
+                                <p className="m-0 text-danger">
+                                  Usuário existente
+                                </p>
                               </div>
-                            }
+                            )}
                           </div>
                         </form>
                       </div>

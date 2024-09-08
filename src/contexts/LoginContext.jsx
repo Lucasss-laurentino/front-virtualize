@@ -27,6 +27,7 @@ export const LoginProvider = ({children}) => {
   }
 
   const createUserAndLogin = () => {
+    
     setLoader(true);
     http.post('/login/createUser', { user })
     .then((response) => {
@@ -38,6 +39,7 @@ export const LoginProvider = ({children}) => {
         setLoader(false);
         setPopup(true);
     });
+  ;
   }
 
 
@@ -50,7 +52,7 @@ export const LoginProvider = ({children}) => {
       loader,
       setLoader,
       setPopup,
-      popup
+      popup,
     }}>
       {children}
     </LoginContext.Provider>
