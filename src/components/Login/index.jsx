@@ -1,69 +1,95 @@
+import { useContext } from "react";
 import "./index.css";
+import { LoginContext } from "../../contexts/LoginContext";
 
 export const Login = () => {
+
+  const { user, setUser, login } = useContext(LoginContext);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    
+    setUser({
+      ...user,
+      [name]: value
+    });
+
+  }
+
   return (
     <>
-      <body class="background-login">
+      <body className="background-login">
         <div id="layoutAuthentication">
           <div id="layoutAuthentication_content">
             <main>
-              <div class="container height-container">
+              <div className="container height-container">
                 
-                <div class="row justify-content-center">
-                  <div class="col-lg-5">
-                    <div class="card shadow-lg border-0 rounded-lg mt-2">
-                      <div class="card-header">
-                        <h3 class="text-center font-weight-light my-1">
+                <div className="row justify-content-center">
+                  <div className="col-lg-5">
+                    <div className="card shadow-lg border-0 rounded-lg mt-2">
+                      <div className="card-header">
+                        <h3 className="text-center font-weight-light my-1">
                           Login
                         </h3>
                       </div>
-                      <div class="card-body">
+                      <div className="card-body">
                         <form>
-                          <div class="form-floating mb-3">
+                          <div className="form-floating mb-3">
                             <input
-                              class="form-control"
+                              className="form-control"
                               id="inputEmail"
                               type="email"
+                              name="EMAIL"
+                              value={user.EMAIL}
+                              onChange={(event) => {
+                                handleChange(event);
+                              }}
                               placeholder="nome@exemplo.com"
                             />
-                            <label for="inputEmail">Email</label>
+                            <label >Email</label>
                           </div>
-                          <div class="form-floating mb-3">
+                          <div className="form-floating mb-3">
                             <input
-                              class="form-control"
+                              className="form-control"
                               id="inputPassword"
                               type="password"
+                              name="PASSWORD"
+                              value={user.PASSWORD}
                               placeholder="Password"
+                              onChange={(event) => {
+                                handleChange(event);
+                              }}
                             />
-                            <label for="inputPassword">Senha</label>
+                            <label>Senha</label>
                           </div>
-                          <div class="form-check mb-3">
+                          <div className="form-check mb-3">
                             <input
-                              class="form-check-input"
+                              className="form-check-input"
                               id="inputRememberPassword"
                               type="checkbox"
                               value=""
                             />
                             <label
-                              class="form-check-label"
-                              for="inputRememberPassword"
+                              className="form-check-label"
                             >
                               Lembrar senha
                             </label>
                           </div>
-                          <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                            <a class="small text-dark" href="/esqueceu_senha">
+                          <div className="d-flex align-items-center justify-content-between mt-4 mb-0">
+                            <a className="small text-dark" href="/esqueceu_senha">
                               Esqueceu a senha ?
                             </a>
-                            <a class="btn btn-dark" href="index.html">
+                            <a className="btn btn-dark" onClick={() => {
+                              login();
+                            }}>
                               Entrar
                             </a>
                           </div>
                         </form>
                       </div>
-                      <div class="card-footer text-center py-3">
-                        <div class="small">
-                          <a class="text-dark" href="/criar_usuario">
+                      <div className="card-footer text-center py-3">
+                        <div className="small">
+                          <a className="text-dark" href="/criar_usuario">
                             Ainda não possui uma conta ?
                           </a>
                         </div>

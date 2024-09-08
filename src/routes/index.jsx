@@ -23,9 +23,11 @@ import { Fornecedores } from '../components/Fornecedores';
 import { Transportadores } from '../components/Transportadores';
 import { Servicos } from '../components/Servicos';
 import { AjusteEstoque } from '../components/AjusteEstoque';
+import { LoginProvider } from '../contexts/LoginContext';
 
 export default function appRouter() {
     return (
+      <LoginProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Index />}>
@@ -71,5 +73,7 @@ export default function appRouter() {
           />
         </Routes>
       </Router>
+      </LoginProvider>
+
     );
 }

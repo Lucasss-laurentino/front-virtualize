@@ -1,50 +1,67 @@
+import { useContext, useEffect } from "react";
+import { LoginContext } from "../../contexts/LoginContext";
 import "./index.css";
+import { MutatingDots } from "react-loader-spinner";
+
 
 export const Criar_usuario = () => {
+  const { user, setUser, createUserAndLogin, loader, popup } =
+    useContext(LoginContext);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
+
+  
   return (
     <>
-      <body class="background-login">
+      <body className="background-login">
         <div id="layoutAuthentication">
           <div id="layoutAuthentication_content">
             <main>
-              <div class="container">
-                <div class="container d-flex justify-content-center align-items-center pt-1">
-                  <a class="navbar-brand ps-3 text-center" href="/">
-                    <img
-                      src="/imagens/vt.png"
-                      class="img-fluid mt-1"
-                      width="40%"
-                      alt="Responsive image"
-                    />
-                  </a>
-                </div>
-
-                <div class="row justify-content-center">
-                  <div class="col-lg-7">
-                    <div class="card shadow-lg border-0 rounded-lg mt-1">
-                      <div class="card-header">
-                        <h3 class="text-center font-weight-light my-1">
+              <div className="container height-container-create-user">
+                <div className="row justify-content-center">
+                  <div className="col-lg-7">
+                    <div className="card shadow-lg border-0 rounded-lg mt-1">
+                      <div className="card-header">
+                        <h3 className="text-center font-weight-light my-1">
                           Criar conta
                         </h3>
                       </div>
-                      <div class="card-body">
+                      <div className="card-body">
                         <form>
-                          <div class="form-floating mb-3">
+                          <div className="form-floating mb-3">
                             <input
-                              class="form-control"
+                              className="form-control"
                               id="inputEmail"
                               type="email"
+                              name="EMAIL"
+                              disabled={loader ? true : false}
+                              value={user.EMAIL}
+                              onChange={(event) => {
+                                handleChange(event);
+                              }}
                               placeholder="name@example.com"
                             />
                             <label for="inputEmail">Email</label>
                           </div>
-                          <div class="row mb-3">
-                            <div class="col-12">
-                              <div class="form-floating">
+                          <div className="row mb-3">
+                            <div className="col-12">
+                              <div className="form-floating">
                                 <input
-                                  class="form-control"
+                                  className="form-control"
                                   id="inputLastName"
                                   type="text"
+                                  name="NOME_EMPRESA"
+                                  disabled={loader ? true : false}
+                                  value={user.NOME_EMPRESA}
+                                  onChange={(event) => {
+                                    handleChange(event);
+                                  }}
                                   placeholder="Enter your last name"
                                 />
                                 <label for="inputLastName">
@@ -54,24 +71,36 @@ export const Criar_usuario = () => {
                             </div>
                           </div>
 
-                          <div class="row mb-3">
-                            <div class="col-md-6">
-                              <div class="form-floating mb-3 mb-md-0">
+                          <div className="row mb-3">
+                            <div className="col-md-6">
+                              <div className="form-floating mb-3 mb-md-0">
                                 <input
-                                  class="form-control"
+                                  className="form-control"
                                   id="inputPassword"
                                   type="password"
                                   placeholder="Create a password"
+                                  name="PASSWORD"
+                                  value={user.PASSWORD}
+                                  disabled={loader ? true : false}
+                                  onChange={(event) => {
+                                    handleChange(event);
+                                  }}
                                 />
                                 <label for="inputPassword">Senha</label>
                               </div>
                             </div>
-                            <div class="col-md-6">
-                              <div class="form-floating mb-3 mb-md-0">
+                            <div className="col-md-6">
+                              <div className="form-floating mb-3 mb-md-0">
                                 <input
-                                  class="form-control"
+                                  className="form-control"
                                   id="inputPasswordConfirm"
                                   type="password"
+                                  name="CONFIRM_PASSWORD"
+                                  disabled={loader ? true : false}
+                                  value={user.CONFIRM_PASSWORD}
+                                  onChange={(event) => {
+                                    handleChange(event);
+                                  }}
                                   placeholder="Confirm password"
                                 />
                                 <label for="inputPasswordConfirm">
@@ -80,21 +109,42 @@ export const Criar_usuario = () => {
                               </div>
                             </div>
                           </div>
-                          <div class="mt-4 mb-0">
-                            <div class="d-grid">
-                              <a
-                                class="btn btn-dark btn-block"
-                                href="login.html"
-                              >
-                                Criar conta
-                              </a>
+                          <div className="mt-4 mb-0">
+                            <div className="d-grid justify-content-center">
+                              {loader ? (
+                                <MutatingDots
+                                  visible={true}
+                                  height="100"
+                                  width="100"
+                                  color="#212529"
+                                  secondaryColor="#212529"
+                                  radius="12.5"
+                                  ariaLabel="mutating-dots-loading"
+                                  wrapperStyle={{}}
+                                  wrapperClass=""
+                                />
+                              ) : (
+                                <a
+                                  className="btn btn-dark btn-block w-100"
+                                  onClick={() => {
+                                    createUserAndLogin();
+                                  }}
+                                >
+                                  Criar conta
+                                </a>
+                              )}
                             </div>
+                            {
+                              popup && <div className="container text-center my-3">
+                                <p className="m-0 text-danger">Usuário existente</p>
+                              </div>
+                            }
                           </div>
                         </form>
                       </div>
-                      <div class="card-footer text-center py-3">
-                        <div class="small">
-                          <a class="text-dark" href="/login">
+                      <div className="card-footer text-center py-3">
+                        <div className="small">
+                          <a className="text-dark" href="/login">
                             Já tem uma conta ?
                           </a>
                         </div>
